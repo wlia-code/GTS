@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>GTS Tech Services</title>
+</head>
+
+<body>
+
+    <div class="language-dropdown">
+        <select class="form-control" id="languageSelector" onchange="switchLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="sv" selected>Swedish</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <img src="/src/ea.jpg" alt="Header Image" class="header-image">
+        <h1 class="mt-4">GTS Tech Services</h1>
+
+        <p id="service-request-text">Skicka in en tjänstförfrågan:</p>
+        <div id="notification" class="alert" style="display: none;"></div>
+        <form id="serviceForm">
+            <div class="form-group">
+                <label for="deviceType" id="device-type-label">Enhets typ:</label>
+                <select class="form-control" id="deviceType" required>
+                    <option value="pc" id="pc-option">Dator</option>
+                    <option value="mobile" id="mobile-option">Mobil</option>
+                    <option value="laptop" id="laptop-option">Laptop</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="model" id="model-label">Modellnamn eller nummer:</label>
+                <input type="text" class="form-control" id="model" required>
+            </div>
+
+            <div class="form-group">
+                <label for="issue" id="issue-label">Problem:</label>
+                <textarea class="form-control" id="issue" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="email" id="email-label">E-post:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone" id="phone-label">Telefonnummer:</label>
+                <input type="tel" class="form-control" id="phone" required>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="submitServiceRequest()" id="submit-button">Skicka</button>
+        </form>
+
+        <div id="confirmation" class="mt-3" style="display: none;">
+            <p class="alert alert-success" id="confirmation-message">Tjänstförfrågan skickad framgångsrikt!</p>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="mt-5" id="our-mission-heading">Vår mission</h1>
+        <p id="our-mission-text">Vi är dedikerade till att erbjuda toppservice för alla dina PC-, mobil- och laptopbehov. Vår mission är att säkerställa kundnöjdhet genom kvalitetsreparationer och utmärkt kundservice. Vi strävar efter att göra tekniken smidig för dig!</p>
+    </div>
+
+    <div class="footer mt-5">
+        &copy; 2024 GTS Tech Services | Email: contact@tech-gts.com
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="./src/script.js"></script>
+</body>
+
+</html>
